@@ -1,8 +1,8 @@
 FSWebServiceAnalyze
 ===========
 
-xml-->NSMutableArray (List<Entity>);
-json-->NSMutableArray (List<Entity>).
+xml-->NSMutableArray (List\<Entity\>);
+json-->NSMutableArray (List\<Entity\>).
 
 Features
 ========
