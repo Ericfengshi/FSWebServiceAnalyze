@@ -1,8 +1,8 @@
 FSWebServiceAnalyze
 ===========
 
-xml-->NSMutableArray (List<Class>);
-json-->NSMutableArray (List<Class>).
+xml-->NSMutableArray (List<Entity>);
+json-->NSMutableArray (List<Entity>).
 
 Features
 ========
@@ -24,7 +24,7 @@ How to use
 ```objective-c
 NSMutableArray *retVal = [FSWebServiceAnalyze jsonToArray:xml class:Entity.class];
     
-NSMutableArray *retVal = [FSWebServiceAnalyze xmlToArray:xml class:Entity.class rowRootName:@"row"];
+NSMutableArray *retVal = [FSWebServiceAnalyze xmlToArray:xml class:Entity.class rowRootName:@"rowRootName"];
     
 ```
 
