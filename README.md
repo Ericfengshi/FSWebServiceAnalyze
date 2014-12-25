@@ -15,16 +15,16 @@ What you need
 
 * FSWebServiceAnalyze.h
 * FSWebServiceAnalyze.m
-* GDataXMLNode.h](http://code.google.com/p/gdata-objectivec-client/downloads/list)
-* GDataXMLNode.m(http://code.google.com/p/gdata-objectivec-client/downloads/list)
+* [GDataXMLNode.h](http://code.google.com/p/gdata-objectivec-client/downloads/list)
+* [GDataXMLNode.m(http://code.google.com/p/gdata-objectivec-client/downloads/list)
 
 How to use
 ---  
 
 ```objective-c
-    NSMutableArray *retVal = [FSWebServiceAnalyze jsonToArray:xml class:Entity.class];
+NSMutableArray *retVal = [FSWebServiceAnalyze jsonToArray:xml class:Entity.class];
     
-    NSMutableArray *retVal = [FSWebServiceAnalyze xmlToArray:xml class:Entity.class rowRootName:@"row"];
+NSMutableArray *retVal = [FSWebServiceAnalyze xmlToArray:xml class:Entity.class rowRootName:@"row"];
     
 ```
 
