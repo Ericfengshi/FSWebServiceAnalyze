@@ -1,6 +1,6 @@
 //
-//  FSWebServiceAnalyze.h
-//  WebServcieBySoap
+//  FSXmlJsonAnalyze.h
+//  https://github.com/Ericfengshi/FSXmlJsonAnalyze
 //
 //  Created by fengs on 14-11-19.
 //  Copyright (c) 2014年 fengs. All rights reserved.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface FSWebServiceAnalyze : NSObject
+@interface FSXmlJsonAnalyze : NSObject
 #pragma mark -
 #pragma mark - 将xml(数组)转换成NSMutableArray (List<String>)
 /**
