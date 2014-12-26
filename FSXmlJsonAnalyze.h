@@ -13,7 +13,7 @@
 #pragma mark - 将xml(数组)转换成NSMutableArray (List<String>)
 /**
  * 将xml(数组)转换成NSMutableArray
- * @param xml
+ * @param xml:
     <string>fs</string>
     <string>fs</string>
     ...
@@ -32,23 +32,23 @@
     ......
     </data>
  * @param class:
-    User
+    User @property userName,userID;
  * @param rowRootName:
     row
- * @return NSMutableArray (List<class>)
+ * @return NSMutableArray (List<User>)
  */
 +(NSMutableArray*)xmlToArray:(NSString*)xml class:(Class)class rowRootName:rowRootName;
 
 #pragma mark -
 #pragma mark - 将标准的Json(实体)转换成NSMutableArray (List<class>)
 /**
- * 把标准的xml(实体)转换成NSMutableArray
- * @param xml:
+ * 把标准的Json(实体)转换成NSMutableArray
+ * @param json:
     [{"UserID":"ff0f0704","UserName":"fs"},
     {"UserID":"ff0f0704","UserName":"fs"},...]
  * @param class:
-    User
- * @return NSMutableArray (List<class>)
+    User @property userName,userID;
+ * @return NSMutableArray (List<User>)
  */
 +(NSMutableArray*)jsonToArray:(NSString*)json class:(Class)class;
 @end

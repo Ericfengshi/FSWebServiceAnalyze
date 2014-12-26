@@ -16,7 +16,7 @@
 #pragma mark - 将xml(数组)转换成NSMutableArray (List<String>)
 /**
  * 将xml(数组)转换成NSMutableArray
- * @param xml
+ * @param xml:
     <string>fs</string>
     <string>fs</string>
     ...
@@ -46,10 +46,10 @@
     ......
     </data>
  * @param class:
-    User
+    User @property userName,userID;
  * @param rowRootName:
     row
- * @return NSMutableArray (List<class>)
+ * @return NSMutableArray (List<User>)
  */
 +(NSMutableArray*)xmlToArray:(NSString*)xml class:(Class)class rowRootName:rowRootName{
     
@@ -59,8 +59,7 @@
     NSArray *rows = [rootEle elementsForName:rowRootName];
     for (GDataXMLElement *row in rows) {
         id object = [[class alloc] init];
-        object = [self initWithXMLString:row.XMLString object:object];
-        [retVal addObject:object];
+        [retVal addObject:[self initWithXMLString:row.XMLString object:object]];
         [object release];
     }
     return retVal;
@@ -70,9 +69,9 @@
  * 将传递过来的实体赋值
  * @param xml(忽略实体属性大小写差异):
     <row><UserID>ff0f0704</UserID><UserName>fs</UserName></row>
- * @param class:
-    User @property userName,userID;
- * @return class
+ * @param object:
+    user @property userName,userID;
+ * @return user
  */
 +(id)initWithXMLString:(NSString*)xml object:(id)object{
     
@@ -93,7 +92,7 @@
 
 /**
  * 通过正则将传递过来的实体赋值
- * @param content(忽略实体属性大小写差异):
+ * @param value(忽略实体属性大小写差异):
     <row><UserID>ff0f0704</UserID><UserName>fs</UserName></row>
  * @param propertyName:
     userID
@@ -119,12 +118,12 @@
 #pragma mark - 将标准的Json(实体)转换成NSMutableArray (List<class>)
 /**
  * 将标准的Json(实体)转换成NSMutableArray
- * @param xml:
+ * @param json:
     [{"UserID":"ff0f0704","UserName":"fs"},
     {"UserID":"ff0f0704","UserName":"fs"},...]
  * @param class:
-    User
- * @return NSMutableArray (List<class>)
+    User @property userName,userID;
+ * @return NSMutableArray (List<User>)
  */
 +(NSMutableArray*)jsonToArray:(NSString*)json class:(Class)class {
     
@@ -141,8 +140,7 @@
             for (NSTextCheckingResult *result in match) {
                 NSString *jsonRow = [json substringWithRange:result.range];
                 id object = [[class alloc] init];
-                object = [self initWithJsonString:jsonRow object:object];
-                [retVal addObject:object];
+                [retVal addObject:[self initWithJsonString:jsonRow object:object]];
                 [object release];
             }
         }
@@ -152,11 +150,11 @@
 
 /**
  * 将传递过来的实体赋值
- * @param xml(忽略实体大小写差异):
+ * @param json(忽略实体大小写差异):
     {"UserID":"ff0f0704","UserName":"fs"}
- * @param class:
-    User @property userName,userID;
- * @return class
+ * @param object:
+    user @property userName,userID;
+ * @return user
  */
 +(id)initWithJsonString:(NSString*)json object:(id)object{
     
@@ -177,7 +175,7 @@
 
 /**
  * 通过正则将传递过来的实体赋值
- * @param content(忽略实体大小写差异):
+ * @param value(忽略实体大小写差异):
     {"UserID":"ff0f0704","UserName":"fs"}
  * @param propertyName:
     userID
